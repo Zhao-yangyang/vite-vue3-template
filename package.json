@@ -14,15 +14,6 @@
     "lint:all": "pnpm run lint && pnpm run prettier-format && pnpm run lint:css",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "*.{vue,less,css,sass,scss}": [
-      "stylelint --fix"
-    ],
-    "src/**/*.{js,vue,ts}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "element-plus": "^2.2.25",
