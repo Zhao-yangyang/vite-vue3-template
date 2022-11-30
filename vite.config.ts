@@ -26,6 +26,7 @@ import transformerDirective from "@unocss/transformer-directives";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envDir: "./env",
   plugins: [
     vue(),
     AutoImport({
