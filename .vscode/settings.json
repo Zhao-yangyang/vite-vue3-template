@@ -16,7 +16,9 @@
         "scss",
         "vue"
     ],
-    "scss.lint.unknownAtRules": "ignore",
+    "less.validate": false,
+    "scss.validate": false,
+    "css.validate": false,
     "eslint.format.enable": true,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

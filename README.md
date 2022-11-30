@@ -1,4 +1,4 @@
-# 在 VScode 中安装`TypeScript Vue Plugin (Volar)`、`ESLint`、`Stylelint`和`Prettier - Code formatter`插件
+# 在 VScode 中安装`Vue Language Features (Volar)、TypeScript Vue Plugin (Volar)`、`ESLint`、`Stylelint`和`Prettier - Code formatter`插件
 
 # 不要删除 .vscode 目录 里面有项目配置
 

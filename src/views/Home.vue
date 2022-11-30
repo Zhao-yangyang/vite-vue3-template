@@ -1,7 +1,6 @@
 <script setup></script>
 
 <template>
-  <div>hello isboyjc, This is toolsdog home page!</div>
   <el-row class="mb-4">
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
@@ -20,12 +19,10 @@
     <!-- ep:alarm-clock  改成  ep-alarm-clock -->
     <icon-ep-alarm-clock />
     <!-- logos:vue -->
-    <icon-logos-vue class="logos" />
+    <icon-logos-vue />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.logos {
-  @apply bg-pink-400 h-100px w-100px;
-}
+/* Home */
 </style>
