@@ -17,6 +17,10 @@
     <Share style="width: 1em; height: 1em; margin-right: 8px" />
     <Delete style="width: 1em; height: 1em; margin-right: 8px" />
     <Search style="width: 1em; height: 1em; margin-right: 8px" />
+    <!-- ep:alarm-clock  改成  ep-alarm-clock -->
+    <icon-ep-alarm-clock class="" />
+    <!-- logos:vue -->
+    <icon-logos-vue />
   </div>
 </template>
 

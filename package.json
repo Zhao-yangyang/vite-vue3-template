@@ -15,12 +15,12 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,vue,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
     "*.{vue,less,css,sass,scss}": [
       "stylelint --fix"
+    ],
+    "src/**/*.{js,vue,ts}": [
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "dependencies": {
@@ -33,6 +33,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
+    "@iconify-json/ep": "^1.1.8",
+    "@iconify-json/logos": "^1.1.19",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.11.9",
     "@vitejs/plugin-vue": "^3.2.0",

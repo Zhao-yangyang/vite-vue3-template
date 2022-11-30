@@ -35,6 +35,22 @@
 5. ui 组件库，`Element Plus`
 6. js 语法，`typescript`
 7. css 框架，`unocss`
+8. icon图标库 icones
+### icon 图标使用规范
+打开icones官网 https://icones.js.org/
+找到想用的图标集合 例如：`ic:baseline-add`
+在vite.config.ts中enabledCollections中添加上对应icon集合前缀
+```
+...
+IconsResolver({
+  ...
+  enabledCollections: ["ep", "logos","ic"],
+  ...
+}),
+...
+```
+ic:baseline-add--> 改为 --> ic-baseline-add再在前面加上icon前缀-->icon-ic-baseline-add
+然后直接在代码中写为`<icon-ic-baseline-add />`即可。
 
 ### 开发规范及优化
 
