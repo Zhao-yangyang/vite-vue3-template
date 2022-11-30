@@ -8,8 +8,6 @@ import Components from "unplugin-vue-components/vite";
 import {
   ElementPlusResolver,
   ArcoResolver,
-  VueUseComponentsResolver,
-  VueUseDirectiveResolver,
 } from "unplugin-vue-components/resolvers";
 // icon 插件
 import Icons from "unplugin-icons/vite";
@@ -17,6 +15,15 @@ import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 // icon 加载 loader
 import { FileSystemIconLoader } from "unplugin-icons/loaders";
+// Unocss 插件
+import Unocss from "unocss/vite";
+// Unocss 默认预设
+import presetUno from "@unocss/preset-uno";
+// Unocss 属性模式预设
+import presetAttributify from "@unocss/preset-attributify";
+// Unocss 指令转换插件
+import transformerDirective from "@unocss/transformer-directives";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -64,6 +71,14 @@ export default defineConfig({
         ),
       },
       autoInstall: true,
+    }),
+    Unocss({
+      // 预设
+      presets: [presetUno(), presetAttributify()],
+      // 指令转换插件
+      transformers: [transformerDirective()],
+      // 自定义规则
+      rules: [],
     }),
   ],
   resolve: {

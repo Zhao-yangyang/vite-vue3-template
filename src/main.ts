@@ -3,6 +3,11 @@ import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import router from "./router";
+//统一公共样式管理、初始化样式
+import "@/styles/normalize.css";
+
+// 导入Unocss样式
+import "uno.css";
 //element plus
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";

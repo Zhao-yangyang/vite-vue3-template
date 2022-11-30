@@ -18,12 +18,14 @@
     <Delete style="width: 1em; height: 1em; margin-right: 8px" />
     <Search style="width: 1em; height: 1em; margin-right: 8px" />
     <!-- ep:alarm-clock  改成  ep-alarm-clock -->
-    <icon-ep-alarm-clock class="" />
+    <icon-ep-alarm-clock />
     <!-- logos:vue -->
-    <icon-logos-vue />
+    <icon-logos-vue class="logos" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* Home */
+.logos {
+  @apply bg-pink-400 h-100px w-100px;
+}
 </style>
