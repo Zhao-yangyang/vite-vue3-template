@@ -22,14 +22,17 @@
       ]
     },
     "types": [
-      "vite/client"
+      "vite/client",
+      "element-plus/global"
     ]
   },
   "include": [
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue",
-    "./shims-vue.d.ts"
+    "./shims-vue.d.ts",
+    "./components.d.ts",
+    "./auto-imports.d.ts"
   ],
   "references": [
     {
