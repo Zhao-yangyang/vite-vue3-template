@@ -9,7 +9,7 @@
 // 获取环境变量
 const ENV = import.meta.env;
 // 配置文件
-let config = {};
+let config: Object = {};
 // 默认配置文件
 const configSource = {
   appCode: ENV.VITE_APP_CODE,
@@ -36,7 +36,7 @@ const configSource = {
  * @param {Object} cfg 配置项
  * @return {Object} 新的全局配置 config
  */
-const setConfig = cfg => {
+const setConfig: (cfg: Object) => Object = function (cfg: Object): Object {
   config = Object.assign(config, cfg);
   return config;
 };
@@ -61,7 +61,7 @@ resetConfig();
  * @param {String} key 配置项，支持 'a.b.c' 的方式获取
  * @return {Object} 新的全局配置 config
  */
-const getConfig = key => {
+const getConfig: (key: string) => Object = function (key: string): Object {
   if (typeof key === "string") {
     const arr = key.split(".");
     if (arr && arr.length) {
@@ -70,7 +70,7 @@ const getConfig = key => {
         if (data && typeof data[v] !== "undefined") {
           data = data[v];
         } else {
-          data = null;
+          data = {};
         }
       });
       return data;
@@ -79,7 +79,7 @@ const getConfig = key => {
   if (Array.isArray(key)) {
     const data = config;
     if (key && key.length > 1) {
-      let res = {};
+      const res: object = {};
       key.forEach(v => {
         if (data && typeof data[v] !== "undefined") {
           res[v] = data[v];
