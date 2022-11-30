@@ -1,4 +1,4 @@
-# 在 VScode 中安装`ESLint`、`Stylelint`和`Prettier - Code formatter`插件
+# 在 VScode 中安装`TypeScript Vue Plugin (Volar)`、`ESLint`、`Stylelint`和`Prettier - Code formatter`插件
 
 # 不要删除 .vscode 目录 里面有项目配置
 
@@ -35,11 +35,15 @@
 5. ui 组件库，`Element Plus`
 6. js 语法，`typescript`
 7. css 框架，`unocss`
-8. icon图标库 icones
+8. icon 图标库 icones
+
 ### icon 图标使用规范
-打开icones官网 https://icones.js.org/
-找到想用的图标集合 例如：`ic:baseline-add`
-在vite.config.ts中enabledCollections中添加上对应icon集合前缀
+
+打开 icones 官网 https://icones.js.org/ 找到想用的图标集合
+
+例如： `ic:baseline-add` 在 vite.config.ts 中 enabledCollections 中添加上对应
+icon 集合前缀
+
 ```
 ...
 IconsResolver({
@@ -49,18 +53,19 @@ IconsResolver({
 }),
 ...
 ```
-ic:baseline-add--> 改为 --> ic-baseline-add再在前面加上icon前缀-->icon-ic-baseline-add
-然后直接在代码中写为`<icon-ic-baseline-add />`即可。
+
+ic:baseline-add--> 改为 --> ic-baseline-add 再在前面加上 icon 前缀
+-->icon-ic-baseline-add 然后直接在代码中写为`<icon-ic-baseline-add />`即可。
 
 ### 开发规范及优化
 
-####代码规范
+#### 代码规范
 
 1. eslint
 2. prettier
 3. stylelint
 
-####git 提交规范
+#### git 提交规范
 
 - husky+commitlint 规范 git 提交 **避免后继维护代码、版本回滚等问题时，找不到哪
   是哪**
