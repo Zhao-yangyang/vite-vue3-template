@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
+import type { ConfigEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -22,73 +23,85 @@ import presetAttributify from '@unocss/preset-attributify'
 import transformerDirective from '@unocss/transformer-directives'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  envDir: './config/env',
-  plugins: [
-    vue(),
-    AutoImport({
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      imports: [
-        'vue',
-        'pinia',
-        'vue-router',
-        {
-          axios: [
-            // default imports
-            ['default', 'axios'], // import { default as axios } from 'axios',
-          ],
+export default defineConfig(({ mode }: ConfigEnv) => {
+  const env = loadEnv(mode, process.cwd())
+  return {
+    envDir: './config/env',
+    server: {
+      proxy: {
+        '/api': {
+          target: env.VITE_BASE_SERVER_URL,
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api/, ''),
         },
-      ],
-      resolvers: [ElementPlusResolver()],
-      eslintrc: {
-        enabled: false, // Default `false`
-        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
-        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
-    }),
-    Components({
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      resolvers: [
-        ElementPlusResolver(),
-        // Auto register icon components
-        // 自动注册图标组件
-        IconsResolver({
-          // icon自动引入的组件前缀 - 为了统一组件icon组件名称格式
-          prefix: 'icon',
-          enabledCollections: ['ep', 'logos'],
-          // 自定义的icon模块集合
-          customCollections: ['user', 'home'],
-        }),
-      ],
-    }),
-    Icons({
-      compiler: 'vue3',
-      customCollections: {
-        // user图标集，给svg文件设置 fill="currentColor" 属性，使图标的颜色具有适应性
-        user: FileSystemIconLoader('src/assets/svg/user', svg =>
-          svg.replace(/^<svg /, '<svg fill="currentColor" ')
-        ),
-        // home 模块图标集
-        home: FileSystemIconLoader('src/assets/svg/home', svg =>
-          svg.replace(/^<svg /, '<svg fill="currentColor" ')
-        ),
-      },
-      autoInstall: true,
-    }),
-    Unocss({
-      // 预设
-      presets: [presetUno(), presetAttributify()],
-      // 指令转换插件
-      transformers: [transformerDirective()],
-      // 自定义规则
-      rules: [],
-    }),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '/@': resolve(__dirname, 'src'),
-      '/cpns': resolve(__dirname, 'src/components'),
     },
-  },
+    plugins: [
+      vue(),
+      AutoImport({
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        imports: [
+          'vue',
+          'pinia',
+          'vue-router',
+          {
+            axios: [
+              // default imports
+              ['default', 'axios'], // import { default as axios } from 'axios',
+            ],
+          },
+        ],
+        resolvers: [ElementPlusResolver()],
+        eslintrc: {
+          enabled: false, // Default `false`
+          filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+          globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+        },
+      }),
+      Components({
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        resolvers: [
+          ElementPlusResolver(),
+          // Auto register icon components
+          // 自动注册图标组件
+          IconsResolver({
+            // icon自动引入的组件前缀 - 为了统一组件icon组件名称格式
+            prefix: 'icon',
+            enabledCollections: ['ep', 'logos'],
+            // 自定义的icon模块集合
+            customCollections: ['user', 'home'],
+          }),
+        ],
+      }),
+      Icons({
+        compiler: 'vue3',
+        customCollections: {
+          // user图标集，给svg文件设置 fill="currentColor" 属性，使图标的颜色具有适应性
+          user: FileSystemIconLoader('src/assets/svg/user', svg =>
+            svg.replace(/^<svg /, '<svg fill="currentColor" ')
+          ),
+          // home 模块图标集
+          home: FileSystemIconLoader('src/assets/svg/home', svg =>
+            svg.replace(/^<svg /, '<svg fill="currentColor" ')
+          ),
+        },
+        autoInstall: true,
+      }),
+      Unocss({
+        // 预设
+        presets: [presetUno(), presetAttributify()],
+        // 指令转换插件
+        transformers: [transformerDirective()],
+        // 自定义规则
+        rules: [],
+      }),
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        '/@': resolve(__dirname, 'src'),
+        '/cpns': resolve(__dirname, 'src/components'),
+      },
+    },
+  }
 })
