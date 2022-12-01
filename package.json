@@ -8,14 +8,24 @@
     "preview": "vite preview",
     "build-only": "vite build --mode production",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.cjs,.ts --fix --ignore-path .gitignore",
     "prettier-format": "prettier \"src/**/*.{vue,js,ts}\" --write",
     "lint:css": "stylelint \"**/*.{vue,css,sass,scss,less}\" --fix",
     "lint:all": "pnpm run lint && pnpm run prettier-format && pnpm run lint:css",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.{vue,js,ts,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{vue,css,sass,scss,less}": [
+      "stylelint  --fix"
+    ]
+  },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "axios": "^1.2.0",
     "element-plus": "^2.2.25",
     "pinia": "^2.0.26",
     "vue": "^3.2.45",

@@ -1,12 +1,14 @@
 # 在 VScode 中安装`Vue Language Features (Volar)、TypeScript Vue Plugin (Volar)`、`ESLint`、`Stylelint`和`Prettier - Code formatter`插件
 
+已经加入项目插件推荐，用 vscode 打开项目后会有相应的插件推荐提醒
+
 # 不要删除 .vscode 目录 里面有项目配置
 
 # 构建工具推荐 `pnpm`
 
 # 初次运行
 
-1、`pnpm i` 2、`pnpm prepare` 3、`pnpm dev`
+1、`pnpm i` 2、`pnpm prepare` 3、`pnpm dev` 4、`pnpm lint:all`格式化
 
 # 打包
 

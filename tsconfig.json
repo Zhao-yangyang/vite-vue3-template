@@ -6,9 +6,10 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
+    "sourceMap": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "esModuleInterop": true,
+    "preserveValueImports": false,
     "lib": [
       "ESNext",
       "DOM"
@@ -17,8 +18,11 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
+      "/@/*": [
+        "src/*"
+      ],
+      "/cpns/*": [
+        "src/components/*"
       ]
     },
     "types": [
@@ -30,9 +34,7 @@
     "./env.d.ts",
     "src/**/*",
     "src/**/*.vue",
-    "./shims-vue.d.ts",
-    "./components.d.ts",
-    "./auto-imports.d.ts"
+    "./*.d.ts"
   ],
   "references": [
     {

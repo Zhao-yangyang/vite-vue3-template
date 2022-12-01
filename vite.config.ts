@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
+import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -23,14 +23,22 @@ import transformerDirective from '@unocss/transformer-directives'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  envDir: './env',
+  envDir: './config/env',
   plugins: [
     vue(),
     AutoImport({
-      // Auto import functions from Vue, e.g. ref, reactive, toRef...
-      // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      imports: ['vue', 'pinia', 'vue-router'],
+      imports: [
+        'vue',
+        'pinia',
+        'vue-router',
+        {
+          axios: [
+            // default imports
+            ['default', 'axios'], // import { default as axios } from 'axios',
+          ],
+        },
+      ],
       resolvers: [ElementPlusResolver()],
       eslintrc: {
         enabled: false, // Default `false`
@@ -79,6 +87,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '/@': resolve(__dirname, 'src'),
+      '/cpns': resolve(__dirname, 'src/components'),
     },
   },
 })
