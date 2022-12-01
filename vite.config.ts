@@ -1,25 +1,25 @@
-import { fileURLToPath, URL } from 'node:url';
+import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-import AutoImport from 'unplugin-auto-import/vite';
-import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // icon 插件
-import Icons from 'unplugin-icons/vite';
+import Icons from 'unplugin-icons/vite'
 // icon 自动引入解析器
-import IconsResolver from 'unplugin-icons/resolver';
+import IconsResolver from 'unplugin-icons/resolver'
 // icon 加载 loader
-import { FileSystemIconLoader } from 'unplugin-icons/loaders';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 // Unocss 插件
-import Unocss from 'unocss/vite';
+import Unocss from 'unocss/vite'
 // Unocss 默认预设
-import presetUno from '@unocss/preset-uno';
+import presetUno from '@unocss/preset-uno'
 // Unocss 属性模式预设
-import presetAttributify from '@unocss/preset-attributify';
+import presetAttributify from '@unocss/preset-attributify'
 // Unocss 指令转换插件
-import transformerDirective from '@unocss/transformer-directives';
+import transformerDirective from '@unocss/transformer-directives'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -81,4 +81,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-});
+})

@@ -7,9 +7,9 @@
  */
 
 // 获取环境变量
-const ENV = import.meta.env;
+const ENV = import.meta.env
 // 配置文件
-let config: Object = {};
+let config: Object = {}
 // 默认配置文件
 const configSource = {
   appCode: ENV.VITE_APP_CODE,
@@ -27,7 +27,7 @@ const configSource = {
   // mockBaseUrl: ENV.VITE_BASE_MOCK_URL,
   // 服务端接口路径
   serverUrl: ENV.VITE_BASE_SERVER_URL,
-};
+}
 
 /**
  * @Author isboyjc
@@ -37,9 +37,9 @@ const configSource = {
  * @return {Object} 新的全局配置 config
  */
 const setConfig: (cfg: Object) => Object = function (cfg: Object): Object {
-  config = Object.assign(config, cfg);
-  return config;
-};
+  config = Object.assign(config, cfg)
+  return config
+}
 
 /**
  * @Author isboyjc
@@ -49,10 +49,10 @@ const setConfig: (cfg: Object) => Object = function (cfg: Object): Object {
  * @return {Object} 全局默认配置 configSource
  */
 const resetConfig = () => {
-  config = { ...configSource };
-  return config;
-};
-resetConfig();
+  config = { ...configSource }
+  return config
+}
+resetConfig()
 
 /**
  * @Author isboyjc
@@ -63,35 +63,35 @@ resetConfig();
  */
 const getConfig: (key: string) => Object = function (key: string): Object {
   if (typeof key === 'string') {
-    const arr = key.split('.');
+    const arr = key.split('.')
     if (arr && arr.length) {
-      let data = config;
+      let data = config
       arr.forEach(v => {
         if (data && typeof data[v] !== 'undefined') {
-          data = data[v];
+          data = data[v]
         } else {
-          data = {};
+          data = {}
         }
-      });
-      return data;
+      })
+      return data
     }
   }
   if (Array.isArray(key)) {
-    const data = config;
+    const data = config
     if (key && key.length > 1) {
-      const res: object = {};
+      const res: object = {}
       key.forEach(v => {
         if (data && typeof data[v] !== 'undefined') {
-          res[v] = data[v];
+          res[v] = data[v]
         } else {
-          res[v] = null;
+          res[v] = null
         }
-      });
-      return res;
+      })
+      return res
     }
-    return data[key];
+    return data[key]
   }
-  return { ...config };
-};
+  return { ...config }
+}
 
-export { getConfig, setConfig, resetConfig };
+export { getConfig, setConfig, resetConfig }

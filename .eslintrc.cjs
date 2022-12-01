@@ -1,4 +1,4 @@
-require('@rushstack/eslint-patch/modern-module-resolution');
+require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   env: {
@@ -30,5 +30,7 @@ module.exports = {
     'no-debugger': 'warn', // 禁止出现 debugger
     'vue/multi-word-component-names': 0,
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    'no-extra-semi': 'error',
+    semi: ['error', 'never'],
   },
-};
+}
