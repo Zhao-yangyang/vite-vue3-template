@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import store from './stores'
 
 import App from './App.vue'
 import router from './router'
@@ -15,7 +15,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 const app = createApp(App)
 
-app.use(createPinia())
+app.use(store)
 app.use(router)
 
 app.use(ElementPlus, { size: 'small', zIndex: 3000 })

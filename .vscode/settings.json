@@ -4,6 +4,7 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
+    "files.eol": "\n",
     "editor.codeActionsOnSave": {
         "source.fixAll": true,
         "source.fixAll.eslint": true,
@@ -12,13 +13,13 @@
     // "typescript.tsdk": "node_modules/typescript/lib",
     "stylelint.validate": [
         "css",
-        "less",
         "scss",
         "vue"
     ],
-    "less.validate": false,
     "scss.validate": false,
     "css.validate": false,
+    "scss.lint.unknownAtRules": "ignore",
+    "css.lint.unknownAtRules": "ignore",
     "eslint.format.enable": true,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
