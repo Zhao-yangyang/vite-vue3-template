@@ -8,7 +8,7 @@ module.exports = {
   // 行尾需要有分号
   semi: true,
   // 使用单引号
-  singleQuote: false,
+  singleQuote: true,
   // 对象的 key 仅在必要时 用引号
   quoteProps: "as-needed",
   // 尾随逗号

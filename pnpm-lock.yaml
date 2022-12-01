@@ -17,6 +17,7 @@ specifiers:
   '@vue/tsconfig': ^0.1.3
   element-plus: ^2.2.25
   eslint: ^8.22.0
+  eslint-plugin-prettier: ^4.2.1
   eslint-plugin-vue: ^9.3.0
   husky: ^8.0.2
   lint-staged: ^13.0.4
@@ -62,6 +63,7 @@ devDependencies:
   '@vue/eslint-config-typescript': 11.0.2_xujyr2aigpdmpdw7dbrxyf7afy
   '@vue/tsconfig': 0.1.3_@types+node@18.11.9
   eslint: 8.28.0
+  eslint-plugin-prettier: 4.2.1_5qrnzwqb344w6up62gv3safeoi
   eslint-plugin-vue: 9.8.0_eslint@8.28.0
   husky: 8.0.2
   lint-staged: 13.0.4
@@ -1932,6 +1934,22 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 8.28.0
+    dev: true
+
+  /eslint-plugin-prettier/4.2.1_5qrnzwqb344w6up62gv3safeoi:
+    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      eslint: '>=7.28.0'
+      eslint-config-prettier: '*'
+      prettier: '>=2.0.0'
+    peerDependenciesMeta:
+      eslint-config-prettier:
+        optional: true
+    dependencies:
+      eslint: 8.28.0
+      prettier: 2.8.0
+      prettier-linter-helpers: 1.0.0
     dev: true
 
   /eslint-plugin-prettier/4.2.1_cwlo2dingkvfydnaculr42urve:

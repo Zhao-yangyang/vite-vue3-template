@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { getConfig } from "../../config/config";
-console.log(getConfig("projectCode"));
+import { getConfig } from '../../config/config';
+console.log(getConfig('projectCode'));
 </script>
 
 <template>

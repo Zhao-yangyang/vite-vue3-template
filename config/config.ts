@@ -62,12 +62,12 @@ resetConfig();
  * @return {Object} 新的全局配置 config
  */
 const getConfig: (key: string) => Object = function (key: string): Object {
-  if (typeof key === "string") {
-    const arr = key.split(".");
+  if (typeof key === 'string') {
+    const arr = key.split('.');
     if (arr && arr.length) {
       let data = config;
       arr.forEach(v => {
-        if (data && typeof data[v] !== "undefined") {
+        if (data && typeof data[v] !== 'undefined') {
           data = data[v];
         } else {
           data = {};
@@ -81,7 +81,7 @@ const getConfig: (key: string) => Object = function (key: string): Object {
     if (key && key.length > 1) {
       const res: object = {};
       key.forEach(v => {
-        if (data && typeof data[v] !== "undefined") {
+        if (data && typeof data[v] !== 'undefined') {
           res[v] = data[v];
         } else {
           res[v] = null;
