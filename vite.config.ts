@@ -36,24 +36,19 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         },
       },
     },
+    build: {
+      target: 'esnext',
+    },
     plugins: [
       vue(),
       AutoImport({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-        imports: [
-          'vue',
-          'pinia',
-          'vue-router',
-          {
-            axios: [
-              // default imports
-              ['default', 'axios'], // import { default as axios } from 'axios',
-            ],
-          },
-        ],
+        imports: ['vue', 'pinia', 'vue-router'],
+        // 调整自动引入的文件位置
+        dts: 'type/auto-imports.d.ts',
         resolvers: [ElementPlusResolver()],
         eslintrc: {
-          enabled: false, // Default `false`
+          enabled: true, // Default `false`
           filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
           globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
         },
@@ -68,23 +63,12 @@ export default defineConfig(({ mode }: ConfigEnv) => {
             // icon自动引入的组件前缀 - 为了统一组件icon组件名称格式
             prefix: 'icon',
             enabledCollections: ['ep', 'logos'],
-            // 自定义的icon模块集合
-            customCollections: ['user', 'home'],
           }),
         ],
+        dts: 'type/components.d.ts',
       }),
       Icons({
         compiler: 'vue3',
-        customCollections: {
-          // user图标集，给svg文件设置 fill="currentColor" 属性，使图标的颜色具有适应性
-          user: FileSystemIconLoader('src/assets/svg/user', svg =>
-            svg.replace(/^<svg /, '<svg fill="currentColor" ')
-          ),
-          // home 模块图标集
-          home: FileSystemIconLoader('src/assets/svg/home', svg =>
-            svg.replace(/^<svg /, '<svg fill="currentColor" ')
-          ),
-        },
         autoInstall: true,
       }),
       Unocss({
@@ -98,10 +82,10 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     ],
     resolve: {
       alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
         '/@': resolve(__dirname, 'src'),
         '/cpns': resolve(__dirname, 'src/components'),
       },
-      extensions: ['.js', '.json', '.ts', '.vue'], // 使用路径别名时想要省略的后缀名，可以自己 增减
     },
   }
 })

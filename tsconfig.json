@@ -33,7 +33,7 @@
   "include": [
     "src/**/*",
     "src/**/*.vue",
-    "./*.d.ts"
+    "src/**/*.d.ts",
   ],
   "references": [
     {
