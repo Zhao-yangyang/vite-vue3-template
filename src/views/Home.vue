@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { configSource } from '../../config/config'
 console.log(configSource)
+console.log(import.meta.env)
 </script>
 
 <template>

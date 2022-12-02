@@ -27,6 +27,7 @@
     "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.2.0",
     "element-plus": "^2.2.25",
+    "lodash": "^4.17.21",
     "pinia": "^2.0.26",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
@@ -37,6 +38,7 @@
     "@iconify-json/ep": "^1.1.8",
     "@iconify-json/logos": "^1.1.19",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/lodash": "^4.14.191",
     "@types/node": "^18.11.9",
     "@unocss/preset-attributify": "^0.47.3",
     "@unocss/preset-uno": "^0.47.3",

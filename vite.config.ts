@@ -98,10 +98,10 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     ],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)),
         '/@': resolve(__dirname, 'src'),
         '/cpns': resolve(__dirname, 'src/components'),
       },
+      extensions: ['.js', '.json', '.ts', '.vue'], // 使用路径别名时想要省略的后缀名，可以自己 增减
     },
   }
 })
