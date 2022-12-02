@@ -37,7 +37,5 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
-​
-vite-env.d.ts
-components.d.ts
+*.sw?​
+*.d.ts

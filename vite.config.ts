@@ -44,6 +44,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         imports: ['vue', 'pinia', 'vue-router'],
         // 调整自动引入的文件位置
         dts: 'type/auto-imports.d.ts',
+        vueTemplate: true,
         resolvers: [ElementPlusResolver()],
         eslintrc: {
           enabled: true, // Default `false`

@@ -1,7 +1,17 @@
 <script lang="ts" setup>
 import { configSource } from '../../config/config'
+import { nanoid } from 'nanoid'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+let id: Ref<string | number> = ref('')
+
 console.log(configSource)
 console.log(import.meta.env)
+async function createUser() {
+  id.value = await nanoid()
+  console.log(id.value)
+}
+createUser()
 </script>
 
 <template>
