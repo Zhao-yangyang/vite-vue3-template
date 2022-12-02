@@ -7,11 +7,17 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    DDay: typeof import('./../src/components/three-line-pic/src/DDay.vue')['default']
+    DMonth: typeof import('./../src/components/three-line-pic/src/DMonth.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElRow: typeof import('element-plus/es')['ElRow']
     IconEpAlarmClock: typeof import('~icons/ep/alarm-clock')['default']
     IconLogosVue: typeof import('~icons/logos/vue')['default']
+    JDay: typeof import('./../src/components/three-line-pic/src/JDay.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    YwzChart: typeof import('./../src/components/three-line-pic/src/YwzChart.vue')['default']
+    YwzForm: typeof import('./../src/components/ywz-form/src/YwzForm.vue')['default']
+    YwzTable: typeof import('./../src/components/ywz-table/src/YwzTable.vue')['default']
   }
 }

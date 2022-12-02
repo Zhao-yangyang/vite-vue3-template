@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { CountInterface } from './type'
+import type { CountInterface } from './types'
 
 export const useCountStore = defineStore({
   id: 'count', //id必填， 且需要唯一

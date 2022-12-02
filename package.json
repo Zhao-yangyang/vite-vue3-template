@@ -8,14 +8,14 @@
     "preview": "vite preview",
     "build-only": "vite build --mode production",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.cjs,.ts --fix --ignore-path .gitignore",
-    "prettier-format": "prettier \"src/**/*.{vue,js,ts}\" --write",
+    "lint": "eslint . --ext .vue,.js,.cjs,.mjs,.ts --fix --ignore-path .gitignore",
+    "prettier-format": "prettier \"src/**/*.{vue,js,ts,mjs,cjs}\" --write",
     "lint:css": "stylelint \"**/*.{vue,css,sass,scss,less}\" --fix",
     "lint:all": "pnpm run lint && pnpm run prettier-format && pnpm run lint:css",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{vue,js,ts,cjs}": [
+    "*.{vue,js,ts,cjs,mjs}": [
       "eslint --fix",
       "prettier --write"
     ],
@@ -26,6 +26,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.2.0",
+    "echarts": "^5.4.0",
     "element-plus": "^2.2.25",
     "lodash": "^4.17.21",
     "nanoid": "^4.0.0",
@@ -39,6 +40,7 @@
     "@iconify-json/ep": "^1.1.8",
     "@iconify-json/logos": "^1.1.19",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/echarts": "^4.9.16",
     "@types/lodash": "^4.14.191",
     "@types/node": "^18.11.9",
     "@unocss/preset-attributify": "^0.47.3",

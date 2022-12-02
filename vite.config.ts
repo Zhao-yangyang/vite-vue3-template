@@ -19,7 +19,6 @@ import presetUno from '@unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
 // Unocss 指令转换插件
 import transformerDirective from '@unocss/transformer-directives'
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd())
@@ -81,7 +80,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     ],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        // '@': fileURLToPath(new URL('./src', import.meta.url)),
         '/@': resolve(__dirname, 'src'),
         '/cpns': resolve(__dirname, 'src/components'),
       },

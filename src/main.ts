@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
-import store from './stores'
+import store, { useUserStore } from './stores'
 
 import App from './App.vue'
 import router from './router'
 //统一公共样式管理、初始化样式
-import '@/styles/normalize.css'
+import '/@/styles/normalize.css'
 
 // 导入Unocss样式
 import 'uno.css'
