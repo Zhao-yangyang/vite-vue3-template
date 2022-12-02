@@ -11,8 +11,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Icons from 'unplugin-icons/vite'
 // icon 自动引入解析器
 import IconsResolver from 'unplugin-icons/resolver'
-// icon 加载 loader
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 // Unocss 插件
 import Unocss from 'unocss/vite'
 // Unocss 默认预设
