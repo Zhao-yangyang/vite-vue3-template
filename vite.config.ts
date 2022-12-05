@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'node:url'
+// import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'
 import type { ConfigEnv } from 'vite'
@@ -19,6 +19,8 @@ import presetUno from '@unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
 // Unocss 指令转换插件
 import transformerDirective from '@unocss/transformer-directives'
+import pxtovw from 'postcss-px-to-viewport'
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd())
@@ -36,8 +38,18 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     build: {
       target: 'esnext',
     },
+    css: {
+      postcss: {
+        plugins: [
+          pxtovw({
+            unitToConvert: 'px', // 要转化的单位
+            viewportWidth: 1440, // UI设计稿的宽度
+          }),
+        ],
+      },
+    },
     plugins: [
-      vue(),
+      vue({ reactivityTransform: true }),
       AutoImport({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         imports: ['vue', 'pinia', 'vue-router'],

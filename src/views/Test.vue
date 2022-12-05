@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { configSource } from '../../config/config'
 import { nanoid } from 'nanoid'
-import { ref } from 'vue'
+// import { ref } from 'vue'
 import type { Ref } from 'vue'
 let id: Ref<string | number> = ref('')
 
@@ -25,10 +25,10 @@ createUser()
     <div style="font-size: 20px">
       <!-- 由于SVG图标默认不携带任何属性 -->
       <!-- 你需要直接提供它们 -->
-      <Edit class="icons" />
-      <Share class="icons" />
-      <Delete class="icons" />
-      <Search class="icons" />
+      <Edit class="w-14px h-14px mr-8px" />
+      <Share class="w-14px h-14px mr-8px" />
+      <Delete class="w-14px h-14px mr-8px" />
+      <Search class="w-14px h-14px mr-8px" />
       <!-- ep:alarm-clock  改成  ep-alarm-clock -->
       <icon-ep-alarm-clock />
       <!-- logos:vue -->
@@ -38,8 +38,5 @@ createUser()
 </template>
 
 <style lang="scss" scoped>
-/* Home */
-.icons {
-  @apply w-1em h-1em mr-8px;
-}
+/* Test */
 </style>

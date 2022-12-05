@@ -32,6 +32,7 @@ specifiers:
   plop: ^3.1.1
   postcss: ^8.4.19
   postcss-html: ^1.5.0
+  postcss-px-to-viewport: ^1.1.1
   prettier: ^2.7.1
   sass: ^1.56.1
   stylelint: ^14.15.0
@@ -84,6 +85,7 @@ devDependencies:
   plop: 3.1.1
   postcss: 8.4.19
   postcss-html: 1.5.0
+  postcss-px-to-viewport: 1.1.1
   prettier: 2.8.0
   sass: 1.56.1
   stylelint: 14.15.0
@@ -3750,6 +3752,11 @@ packages:
       boolbase: 1.0.0
     dev: true
 
+  /object-assign/4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
     dev: true
@@ -4109,6 +4116,13 @@ packages:
 
   /postcss-media-query-parser/0.2.3:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
+    dev: true
+
+  /postcss-px-to-viewport/1.1.1:
+    resolution: {integrity: sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==}
+    dependencies:
+      object-assign: 4.1.1
+      postcss: 8.4.19
     dev: true
 
   /postcss-resolve-nested-selector/0.1.1:
