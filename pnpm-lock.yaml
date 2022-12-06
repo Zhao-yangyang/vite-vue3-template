@@ -29,6 +29,7 @@ specifiers:
   nanoid: ^4.0.0
   npm-run-all: ^4.1.5
   pinia: ^2.0.26
+  pinia-plugin-persistedstate: ^3.0.1
   plop: ^3.1.1
   postcss: ^8.4.19
   postcss-html: ^1.5.0
@@ -57,6 +58,7 @@ dependencies:
   lodash: 4.17.21
   nanoid: 4.0.0
   pinia: 2.0.27_e7lp6ggkpgyi5vqd44m2kxvk6i
+  pinia-plugin-persistedstate: 3.0.1_pinia@2.0.27
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
 
@@ -4062,6 +4064,14 @@ packages:
     resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
     engines: {node: '>=4'}
     dev: true
+
+  /pinia-plugin-persistedstate/3.0.1_pinia@2.0.27:
+    resolution: {integrity: sha512-WRNWtR4v8StJqBQH+Qiz88SGnlr4wvEyh7wtA+fYEVLoIOnpZ0v4FICvUcC8eUkAIvQL3n6/Ew2yryw7okazvA==}
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.0.27_e7lp6ggkpgyi5vqd44m2kxvk6i
+    dev: false
 
   /pinia/2.0.27_e7lp6ggkpgyi5vqd44m2kxvk6i:
     resolution: {integrity: sha512-nOnXP0OFeL8R4WjAHsterU+11vptda643gH02xKNtSCDPiRzVfRYodOLihLDoa0gL1KKuQKV+KOzEgdt3YvqEw==}

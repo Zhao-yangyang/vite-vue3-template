@@ -5,8 +5,7 @@
     "vitest.config.*",
     "cypress.config.*",
     "playwright.config.*",
-    "postcss-px-to-viewport.*",
-    "type/postcss-px-to-viewport.d.ts"
+    "types/postcss-px-to-viewport.*",
   ],
   "compilerOptions": {
     "composite": true,

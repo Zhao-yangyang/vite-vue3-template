@@ -13,7 +13,8 @@
     "prettier-format": "prettier \"src/**/*.{vue,js,ts,mjs,cjs}\" --write",
     "lint:css": "stylelint \"**/*.{vue,css,sass,scss,less}\" --fix",
     "lint:all": "pnpm run lint && pnpm run prettier-format && pnpm run lint:css",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "plop": "plop"
   },
   "lint-staged": {
     "*.{vue,js,ts,cjs,mjs}": [
@@ -32,6 +33,7 @@
     "lodash": "^4.17.21",
     "nanoid": "^4.0.0",
     "pinia": "^2.0.26",
+    "pinia-plugin-persistedstate": "^3.0.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

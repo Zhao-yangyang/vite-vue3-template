@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Baseheader: typeof import('./../src/components/Baseheader/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElRow: typeof import('element-plus/es')['ElRow']
     IconEpAlarmClock: typeof import('~icons/ep/alarm-clock')['default']

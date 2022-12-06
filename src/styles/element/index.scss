@@ -1,0 +1,84 @@
+$--colors: (
+  'primary': (
+    'base': #338afe,
+  ),
+  'success': (
+    'base': #67c23a,
+  ),
+  'warning': (
+    'base': #faad15,
+  ),
+  'danger': (
+    'base': #f93920,
+  ),
+  'error': (
+    'base': #f93920,
+  ),
+  'info': (
+    'base': #8c8c8c,
+  ),
+);
+$--text-color: (
+  'primary': #262626,
+  'regular': #595959,
+  'secondary': #8c8c8c,
+  'placeholder': #a6a6a6,
+  'disabled': #bfbfbf,
+);
+$--border-color: (
+  '': #d9d9d9,
+  'light': #e0e0e0,
+  'lighter': #e8e8e8,
+  'extra-light': #f0f0f0,
+  'dark': #d1d1d1,
+  'darker': #c9c9c9,
+);
+$--fill-color: (
+  '': #f0f2f5,
+  'light': #f5f7fa,
+  'lighter': #fafafa,
+  'extra-light': #fafcff,
+  'dark': #ebedf0,
+  'darker': #e6e8eb,
+  'blank': #ffffff,
+);
+$--bg-color: (
+  '': #ffffff,
+  'page': #ffffff,
+  'overlay': #ffffff,
+);
+$--mask-color: (
+  '': #ffffff 90%,
+  'extra-light': #ffffff 30%,
+);
+$--overlay-color: (
+  '': #000000 80%,
+  'light': #000000 70%,
+  'lighter': #000000 50%,
+);
+// we can add this to custom namespace, default is 'el'
+// @forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
+//   $namespace: 'ep'
+// );
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // do not use same name, it will override.
+  $colors: $--colors,
+  $text-color: $--text-color,
+  $border-color: $--border-color,
+  $fill-color: $--fill-color,
+  $bg-color: $--bg-color,
+  $mask-color: $--mask-color,
+  $overlay-color: $--overlay-color,
+  $button-padding-horizontal: ('default': 50px)
+);
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
+
+// custom dark variables
+@use './dark.scss';

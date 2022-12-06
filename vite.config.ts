@@ -47,6 +47,11 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           }),
         ],
       },
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "/@/styles/element/index.scss" as *;`,
+        },
+      },
     },
     plugins: [
       vue({ reactivityTransform: true }),
@@ -54,7 +59,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         imports: ['vue', 'pinia', 'vue-router'],
         // 调整自动引入的文件位置
-        dts: 'type/auto-imports.d.ts',
+        dts: 'types/auto-imports.d.ts',
         vueTemplate: true,
         resolvers: [ElementPlusResolver()],
         eslintrc: {
@@ -66,7 +71,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       Components({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [
-          ElementPlusResolver(),
+          ElementPlusResolver({ importStyle: 'sass' }),
           // Auto register icon components
           // 自动注册图标组件
           IconsResolver({
@@ -75,7 +80,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
             enabledCollections: ['ep', 'logos'],
           }),
         ],
-        dts: 'type/components.d.ts',
+        dts: 'types/components.d.ts',
       }),
       Icons({
         compiler: 'vue3',

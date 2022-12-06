@@ -1,0 +1,4 @@
+import { defineStore } from 'pinia' import store from '/@/stores/index' export
+const useMainStore = defineStore('main', { state: () => ({}), getters: {},
+actions: {}, }) export function useMainOutsideStore() { return
+useMainStore(store) }
