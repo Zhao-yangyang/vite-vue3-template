@@ -17,5 +17,6 @@ module.exports = {
       },
     ],
     'no-empty-source': null,
+    'string-quotes': ['single'],
   },
 }

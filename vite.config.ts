@@ -43,7 +43,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         plugins: [
           pxtovw({
             unitToConvert: 'px', // 要转化的单位
-            viewportWidth: 1440, // UI设计稿的宽度
+            viewportWidth: 1920, // UI设计稿的宽度
           }),
         ],
       },

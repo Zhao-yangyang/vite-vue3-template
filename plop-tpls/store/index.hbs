@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia' import store from '/@/stores/index' export
-const useMainStore = defineStore('main', { state: () => ({}), getters: {},
-actions: {}, }) export function useMainOutsideStore() { return
-useMainStore(store) }
+const use{{properCase name}}Store = defineStore('{{properCase name}}', { state:
+() => ({}), getters: {}, actions: {}, }) export function use{{properCase
+  name
+}}OutsideStore() { return use{{properCase name}}Store(store) }

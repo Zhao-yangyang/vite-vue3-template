@@ -15,7 +15,7 @@ createUser()
 </script>
 
 <template>
-  <el-row class="h-100vh w-100%s flex justify-center items-center">
+  <el-row class="w-100% h-100% flex justify-center items-center">
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
     <el-button type="success">Success</el-button>

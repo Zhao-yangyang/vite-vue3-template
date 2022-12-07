@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useCountStore } from '/@/stores'
-import { storeToRefs } from 'pinia'
 const countStore = useCountStore()
 // 通过计算属性
 const countComputed = computed(() => countStore.count)

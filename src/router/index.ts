@@ -1,21 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
-const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    redirect: '/test',
-  },
-  {
-    path: '/test',
-    name: 'test',
-    component: () => import('../views/Test.vue'),
-  },
-  {
-    path: '/storetest',
-    name: 'storetest',
-    component: () => import('/@/views/StoreTest.vue'),
-  },
-]
+import routes from './routes'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
