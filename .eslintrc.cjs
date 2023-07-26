@@ -32,6 +32,6 @@ module.exports = {
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'no-extra-semi': 'error',
     semi: ['error', 'never'],
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
   },
 }
