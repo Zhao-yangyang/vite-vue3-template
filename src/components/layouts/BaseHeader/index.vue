@@ -1,7 +1,12 @@
 <script setup lang="ts" name="BaseHeader">
 import { toggleDark, isDark } from '/@/composables'
 import { useLayoutStore } from '/@/stores'
-
+const router = useRouter()
+console.log(
+  router.options.routes.filter(r => r.name === 'layout'),
+  router.currentRoute.value,
+  'router'
+)
 const layoutSotre = useLayoutStore()
 const { isCollapse } = storeToRefs(layoutSotre)
 const clickCollapse = () => {
@@ -22,7 +27,9 @@ const clickCollapse = () => {
       </div>
       <el-breadcrumb separator="/" class="ml-12px">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ name: 'test' }">Test</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: router.currentRoute.value.path }">{{
+          router.currentRoute.value.meta.title
+        }}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="flex-grow" />

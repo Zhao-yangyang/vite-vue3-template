@@ -15,5 +15,6 @@
 <style lang="scss" scoped>
 .context-box {
   height: calc(100vh - 64px);
+  width: calc(100vw - 12%);
 }
 </style>

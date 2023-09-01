@@ -2,6 +2,10 @@
 import { useLayoutStore } from '/@/stores'
 
 const layoutSotre = useLayoutStore()
+const router = useRouter()
+const baseSide: any = router.options.routes.filter(r => r.name === 'layout')
+console.log(baseSide, 'baseSide')
+
 const { isCollapse } = storeToRefs(layoutSotre)
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
@@ -20,21 +24,27 @@ const handleClose = (key: string, keyPath: string[]) => {
   >
     <el-menu-item index="1" class="mb-12px el-menu-first-child">
       <icon-logos-dribbble-icon class="text-32px mr-10px" />
-      <template #title>灵犀系统</template>
+      <template #title>Test系统</template>
     </el-menu-item>
-    <el-sub-menu index="2">
+    <el-menu-item index="2" v-for="el of baseSide[0].children" :key="el.name">
       <template #title>
         <el-icon><location /></el-icon>
-        <span>Navigator One</span>
+        <span>{{ el.meta.title }}</span>
       </template>
-      <el-menu-item index="1-1">item one</el-menu-item>
+    </el-menu-item>
+    <!--  <el-sub-menu index="2" v-for="el of baseSide[0].children" :key="el.name">
+      <template #title>
+        <el-icon><location /></el-icon>
+        <span>{{ el.meta.title }}</span>
+      </template>
+       <el-menu-item index="1-1">item one</el-menu-item>
       <el-menu-item index="1-2">item two</el-menu-item>
       <el-menu-item index="1-3">item three</el-menu-item>
       <el-sub-menu index="1-4">
         <template #title>item four</template>
         <el-menu-item index="1-4-1">item one</el-menu-item>
       </el-sub-menu>
-    </el-sub-menu>
+    </el-sub-menu> -->
   </el-menu>
 </template>
 
