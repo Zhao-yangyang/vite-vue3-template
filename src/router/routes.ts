@@ -20,11 +20,11 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-  {
-    path: '/test',
-    name: 'test',
-    component: () => import('../views/Test.vue'),
-  },
+  // {
+  //   path: '/test',
+  //   name: 'test',
+  //   component: () => import('../views/Test.vue'),
+  // },
   {
     path: '/storetest',
     name: 'storetest',

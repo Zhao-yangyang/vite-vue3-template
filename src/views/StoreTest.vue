@@ -19,6 +19,9 @@ const { doubleCount } = storeToRefs(countStore)
       -1
     </el-button>
   </div>
+  <div>
+    <img class="w-20" src="/@/assets/images/test1.png" alt="" />
+  </div>
 </template>
 <style lang="scss" scoped>
 /* Sotre Test */
